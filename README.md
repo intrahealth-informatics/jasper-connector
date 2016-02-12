@@ -34,9 +34,24 @@ iHRIS Resources
 - iHRIS Custom Reports http://wiki.ihris.org/wiki/Custom_Reporting
 - iHRIS source code and customizations https://launchpad.net/ihris-suite
 
+
+
 iHRIS API Endpoints
 -------------------
-- http://localhost/ihris-manage-demo
+Once installed according to above, you can access iHRIS at http://localhost/ihris-manage-demo  Username = i2ce_admin password is mysql password on install.
+
+You can execute a GET request with HTTP BASIC AUTH for Magic Data Export at 
+   http://localhost/ihris-manage-site-demo/magicDataExport/export 
+The query parameters are:
+- config_path: (required) the Path in magic data you want to export data from.  See links above.
+- name:  (required) You are exporting data into an iHRIS module.  This just a name to identify the module.  Probably not useful but should be set.
+- displayName: (optional) Human readable name describing the 
+- description: (optional) description of the data you are exporting
+- version: (optional) version of the data you are export.  
+This will return an XML file $name.xml where $name is the name set above.
+
+
+  
 
 
 Jasper Resources
